@@ -24,7 +24,7 @@ console.log(categorizedObject);
 const testArray3 = [
 	[1,2],
 	[5,10],
-	[12, 3, [1, 3]],
+	[12, 3],
 ]
 const flatedTestArray3 = testArray3.reduce((acc, e) => {
 	return [...acc, ...e.map(num => num*2)];

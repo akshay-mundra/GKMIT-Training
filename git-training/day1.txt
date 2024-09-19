@@ -1,0 +1,48 @@
+Git session
+1. Git basics - Working dir, staging area,  commit area.
+2. Creating new branch and switching.
+3. Review branch and merge branch in github.
+4. Basics commands of git
+5. Branch naming convention - 
+	main - main / master / prod
+	stage - stage / preprod
+	feature - feature-<fefature-name |  Jira tickit >
+	bugfix - bugfix-<bug-name | tickit>
+	hotfix - hotfix-... (for critical situation only - as it cuts from main and merge in main)
+	release - release-<date> (for releasing new version --- main->release, stage->release, release->main);
+6. Fork and clone difference.
+7. How merge works and resolving merge conflicts
+8. commit naming convenction.
+9. Types of merging -> auto merge and three way merging.
+10. Creadted PR to Raghvendra/git-learning to create pull request of new branch for my task
+11. Completed task given by Dhruvil Dave of removing a unwanted file from git after pushing.
+
+
+
+from notes ->
+branches 
+- hotfix -> from main to main (to resolve critical fix)
+- feature -> to cteate a new feature - from state to state
+- bugfix -> to fix non critical bugs - from stage to stage
+- Stage -> from main at start then merged in realease branch
+- release -> from main - stage gets merged - then merged to main (production)
+
+
+
+### Resources
+Shared by Raghvendra Khatri sir - https://docs.google.com/document/d/1cJtKxhrvSjzBu61gYeOjCRF6QDbbfbTREzf4ygCBH-g/edit
+Commit message conventions - https://dev.to/hornet_daemon/git-commit-patterns-5dm7
+Protected branches - https://software.rcc.uchicago.edu/git/help/user/project/protected_branches.md
+git revert, rebase, cherry-pick explained - https://medium.com/@ezikejanenkemdili/git-rebase-git-cherry-pick-and-git-revert-a3d590d7e38f#:~:text=In%20summary%2C%20git%20rebase%20is,the%20commit%20from%20git%20history.
+
+
+
+If you push a unwanted file/folder to git and github then to remote it we use the following 
+1. Add it to gitignore
+2. delete that file from git repo
+	-> git rm -r --cached <file/folder name or path>
+3. create a new commit and push to the origin
+
+
+how i find this reource -> Searched  - How to remove node_module from git and github
+resource : https://gist.github.com/apieceofbart/4ffa7aaee435ea2875b6d9c9395461ae
