@@ -24,20 +24,34 @@ console.log(testArray2);
 
 // sorting array of objectss
 const testArray3 = [
-{
-	name: "Akshay",
-},
-{
-	name: "Aditya",
-},
-{
-	name: "Abhishek"
-},
-{
-	name: "Yash"
-}
+	{
+		name: "Akshay",
+	},
+	{
+		name: "Aditya",
+	},
+	{
+		name: "Abhishek"
+	},
+	{
+		name: "Yash"
+	}
 ]
 
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/localeCompare
 testArray3.sort((item1, item2) => item1.name.localeCompare(item2.name));
 console.log(testArray3)
+
+
+
+
+//sort array of strings and numbers
+const testArray4 = [12, "abc", 523, "5000", "xyz", "udaipur"];
+testArray4.sort((a, b) => {
+	if(typeof a === "number" && typeof b === "number") return a-b;
+	if (typeof a === "number") return -1;
+	if(typeof b === "number") return 1;
+	else return a > b ? 1 : -1;
+})
+
+console.log(testArray4);

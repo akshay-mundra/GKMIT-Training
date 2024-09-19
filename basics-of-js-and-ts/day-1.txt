@@ -1,7 +1,8 @@
 DATE - 18-09-2024
 
 1. JS and TS session
-2. Array functions -  map, filter, forEach, find
+2. Array functions - map, filter, forEach, find
 3. Array reduce and sort 
 4. W3schools js function
+
 
