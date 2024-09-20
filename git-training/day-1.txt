@@ -46,3 +46,13 @@ If you push a unwanted file/folder to git and github then to remote it we use th
 
 how i find this reource -> Searched  - How to remove node_module from git and github
 resource : https://gist.github.com/apieceofbart/4ffa7aaee435ea2875b6d9c9395461ae
+
+
+
+
+
+Linking the fork to its origin 
+
+https://stackoverflow.com/questions/7244321/how-do-i-update-or-sync-a-forked-repository-on-github
+
+

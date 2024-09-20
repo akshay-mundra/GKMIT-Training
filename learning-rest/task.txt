@@ -1,0 +1,157 @@
+Task - Create endpoints for Users and Posts
+
+# users
+
+url - localhost:5000/users
+method - GET
+body: {}
+response: {
+	data: [
+		{username, email}
+	]
+}
+status : 200
+
+
+url - localhost:5000/users
+method - POST
+body: {
+		username, email
+}
+response: {message}
+status : 201
+
+
+url - localhost:5000/users/:id
+method - GET
+body: {}
+response: {
+	data: {
+		username, email
+	}
+}
+status: 200
+
+
+url - localhost:5000/users/:id
+method - PUT
+body: {
+		username, email
+}
+response: {message}
+status: 200 | 204
+
+
+url - localhost:5000/users/:id
+method - PATCH
+body: {
+	username
+}
+response: {message}
+status: 200 | 204
+
+
+url - localhost:5000/users/:id
+method - DELETE
+body: {}
+response: {message}
+status: 200 | 204
+
+
+
+
+
+# Posts
+
+url - localhost:5000/posts?startDate=19-09-2024&endDate=25-09-2024&page=2&limit=10
+method - GET
+body: {}
+response: {
+	data: [{user, postDate, lastMOdified, title, description, image}]
+}
+status: 200
+
+
+url - localhost:5000/posts
+method - POST
+body: {
+	user: userID,
+	postDate: date,
+	lastModified: date,
+	title, description and image
+}
+response: {message}
+status: 201
+
+
+url - localhost:5000/posts/:id
+method - GET
+body: {}
+response: {
+	data: {
+		user: userID,
+		postDate: date,
+		lastModified: date,
+		title, description and image
+	}
+}
+status: 200
+
+
+url - localhost:5000/posts/:id
+method - PUT
+body: {
+	user, postdate, lastModified, title, description, image
+}
+response: {message}
+status: 200 | 204
+
+
+url - localhost:5000/posts/:id
+method - PATCH
+body: {
+	title or any other key to be patched
+}
+response: {message}
+status: 200 | 204
+
+
+url - localhost:5000/posts/:id
+method - DELETE
+body: {}
+response: {message}
+status: 200 | 204
+
+
+url - localhost:5000/users/:id/posts?startDate=19-09-2024&endDate=25-09-2024&page=2&limit=10
+method - GET
+body: {}
+response: {
+	data: [{user, postDate, lastMOdified, title, description, image}]
+}
+status: 200
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
