@@ -1,61 +1,76 @@
 Task - Create endpoints for Users and Posts
 
+
+mistakes------
+- Use json format in body and response, 
+- No multiple status codes
+- must usage of http in url
+- 
+
+
+
 # users
 
-url - localhost:5000/users
+url - http://localhost:5000/users
 method - GET
 body: {}
 response: {
 	data: [
-		{username, email}
+		{
+			"username": "username",
+			"email": "abc@gmail.com"
+		}
 	]
 }
 status : 200
 
 
-url - localhost:5000/users
+url - http://localhost:5000/users
 method - POST
 body: {
-		username, email
+	"username": "username",
+	"email": "abc@gmail.com"
 }
-response: {message}
+response: {"message": "message"}
 status : 201
 
 
-url - localhost:5000/users/:id
+url - http://localhost:5000/users/:id
 method - GET
 body: {}
 response: {
 	data: {
-		username, email
+		"username": "username",
+		"email": "abc@gmail.com"
 	}
 }
 status: 200
 
 
-url - localhost:5000/users/:id
+url - http://localhost:5000/users/:id
 method - PUT
 body: {
-		username, email
+	"username": "username",
+	"email": "abc@gmail.com"
 }
-response: {message}
-status: 200 | 204
+response: {"message": "message"}
+status: 200
 
 
-url - localhost:5000/users/:id
+url - http://localhost:5000/users/:id
 method - PATCH
 body: {
-	username
+	"username": "username"
 }
-response: {message}
-status: 200 | 204
+response: {"message": "message"}
+status: 200
 
 
-url - localhost:5000/users/:id
+url - http://localhost:5000/users/:id
 method - DELETE
 body: {}
-response: {message}
-status: 200 | 204
+response: {"message": "message"}
+status: 200
 
 
 
@@ -63,94 +78,100 @@ status: 200 | 204
 
 # Posts
 
-url - localhost:5000/posts?startDate=19-09-2024&endDate=25-09-2024&page=2&limit=10
+url - http://localhost:5000/posts?startDate=19-09-2024&endDate=25-09-2024&page=2&limit=10
 method - GET
 body: {}
 response: {
-	data: [{user, postDate, lastMOdified, title, description, image}]
+	data: [
+		{
+			"user": "user id",
+			"postDate": "19-09-2024",
+			"lastMOdified": "19-09-2024",
+			"title": "title",
+		    "description": "description",
+			"image": "image"
+		}
+	]
 }
 status: 200
 
 
-url - localhost:5000/posts
+url - http://localhost:5000/posts
 method - POST
 body: {
-	user: userID,
-	postDate: date,
-	lastModified: date,
-	title, description and image
+	"user": "userID",
+	"postDate": "date",
+	"lastModified": "date",
+	"title": "title",
+	"description": "description",
+	"image": "image"
 }
-response: {message}
+response: {message: "message"}
 status: 201
 
 
-url - localhost:5000/posts/:id
+url - http://localhost:5000/posts/:id
 method - GET
 body: {}
 response: {
 	data: {
-		user: userID,
-		postDate: date,
-		lastModified: date,
-		title, description and image
+		"user": "userID",
+		"postDate": "date",
+		"lastModified": "date",
+		"title": "title",
+		"description": "description",
+		"image": "image"
 	}
 }
 status: 200
 
 
-url - localhost:5000/posts/:id
+url - http://localhost:5000/posts/:id
 method - PUT
 body: {
-	user, postdate, lastModified, title, description, image
+	"user": "userID",
+	"postDate": "date",
+	"lastModified": "date",
+	"title": "title",
+	"description": "description",
+	"image": "image"
 }
-response: {message}
-status: 200 | 204
-
-
-url - localhost:5000/posts/:id
-method - PATCH
-body: {
-	title or any other key to be patched
-}
-response: {message}
-status: 200 | 204
-
-
-url - localhost:5000/posts/:id
-method - DELETE
-body: {}
-response: {message}
-status: 200 | 204
-
-
-url - localhost:5000/users/:id/posts?startDate=19-09-2024&endDate=25-09-2024&page=2&limit=10
-method - GET
-body: {}
-response: {
-	data: [{user, postDate, lastMOdified, title, description, image}]
-}
+response: {message: "message"}
 status: 200
 
 
+url - http://localhost:5000/posts/:id
+method - PATCH
+body: {
+	"title": "title"
+}
+response: {message: "message"}
+status: 200
 
 
+url - http://localhost:5000/posts/:id
+method - DELETE
+body: {}
+response: {message: "message"}
+status: 200
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+url - http://localhost:5000/users/:id/posts?startDate=19-09-2024&endDate=25-09-2024&page=2&limit=10
+method - GET
+body: {}
+response: {
+	data: [
+		{
+			"user": "userID",
+			"postDate": "date",
+			"lastModified": "date",
+			"title": "title",
+			"description": "description",
+			"image": "image"
+		}
+	]
+}
+status: 200
 
 
 
