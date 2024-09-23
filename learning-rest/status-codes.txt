@@ -1,0 +1,103 @@
+100 series
+
+100 - Continue
+101 - Switching Protocols
+102 - Processing
+103 - Early Hints
+
+
+
+200 series
+
+200 - OK
+201 - Created
+202 - Accepted
+203 - Non authoretative information
+204 - No content
+205 - Reset content
+206 - Partial content
+207 - Multi status
+208 - Already reported
+226 - IM Used
+
+
+
+300 series
+
+300 - Multiple choices
+301 - Moved Permanently
+302 - Found
+303 - See other
+304 - Not modified
+305 - Use proxy
+306 - (unused) or depricated
+307 - Temprory redirect 
+308 - Permanent redirect
+
+
+
+400 series
+
+400 - Bad Request
+401 - Unauthorized
+402 - Payment Required
+403 - Forbidden
+404 - Not Found
+405 - Method not allowed
+406 - Not accepted
+407 - Proxy authentication required
+408 - Request timeout
+409 - Conflict
+410 - Gone
+411 - Length Required
+412 - Precondition failed
+413 - Payload too large
+414 - Uri too large
+415 - Unsupported media type
+416 - Range not satisfiable
+417 - Expectation failed
+418 - I am a teapot
+421 - Misdirected Request
+422 - Unprocessable entity
+423 - Locked
+424 - Failed Dependency
+425 - Too early
+426 - Upgrade required
+428 - precondition required
+429 - too many requests
+431 - req header fields too large 
+
+
+
+500 series
+
+500 - Internal Server error
+501 - Not Implemented
+502 - Bad Gateway
+503 - Service Unavailable
+504 - Gateway Timeout
+505 - HTTP version not supported
+506 - Variant also noegotiates
+507 - Insufficient Storage
+508 - Loop detected
+509 - Bandwidth limit exceeded
+510 - Not Extended
+511 - Network authentication required
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
