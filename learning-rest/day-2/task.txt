@@ -1,0 +1,20 @@
+
+
+Task -
+
+1. how to access global variables and collection based variables in postman
+2. How to share your collections in postman.
+3. 401 and 403 diff
+4. When to use content type json and form data and why??
+5. Create end point in postman using country, state and city.
+6. Creating sample payload or http response in postman (optional)
+7. Write a post response script to save a token using a public api in env 
+8. Explore all auth method such as api, token, jwt, etc.
+
+
+
+today session-
+-learned collections
+- learned variables 
+- folder structure
+- 
