@@ -1,0 +1,36 @@
+#task 
+
+1. base 64 encoding
+2. why we write bearer in bearer token
+3. Cookie based authentication
+4. Session based authentication
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

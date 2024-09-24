@@ -1,0 +1,34 @@
+Today's session 
+1. Authorization types 
+	basic auth, bearer token, jwt, oauth 1, 2,  api key
+2. Request headers and response headers
+3. Intro to rate limiting.
+4. Cors and best practice.
+5. Meeting with Amit Sangwan - MVC arch and oAuth.
+
+6. Learned base64 algorithm.
+7. Cookie based auth.
+8. session based auth.
+
+
+
+# Resources
+
+
+
+
+auth 
+https://www.ibm.com/docs/en/tfim/6.2.2.7?topic=overview-oauth-20-workflow
+https://medium.com/identity-beyond-borders/oauth-1-0-vs-oauth-2-0-e36f8924a835
+
+OAuth 1.0 vs OAuth 2.0 - 
+https://stackoverflow.com/questions/4113934/how-is-oauth-2-different-from-oauth-1
+https://medium.com/identity-beyond-borders/oauth-1-0-vs-oauth-2-0-e36f8924a835
+
+Cookie based auth -
+https://stackoverflow.com/questions/17769011/how-does-cookie-based-authentication-work
+
+Base 64 -
+https://builtin.com/software-engineering-perspectives/base64-encoding
+
+
