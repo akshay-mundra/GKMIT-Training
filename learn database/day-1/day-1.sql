@@ -91,3 +91,18 @@ WHERE
   "InvoiceDate" 
   BETWEEN '2009-01-01' AND '2009-03-31';
 
+
+-- above question in groups
+
+SELECT 
+  "InvoiceDate",
+  COUNT("InvoiceId") AS "Total Invoices",
+  SUM("Total") AS "Total Value"
+FROM
+  "Invoice"
+WHERE
+  "InvoiceDate" 
+  BETWEEN '2009-01-01' AND '2009-03-31'
+GROUP BY 
+  "InvoiceDate";
+
