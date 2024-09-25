@@ -1,0 +1,113 @@
+SQL queries
+
+
+## select, where, order by, sort, limit
+
+Select * from <table_name>
+where name = "   "
+order by name desc
+limit 10
+offset 0;
+
+
+
+select - select from table
+where - apply condition
+order by - sorting using a column desc or asc
+limit - limit the quantity of rows in query
+offset - it says the starting point form where to start query.
+
+
+
+
+## update query
+UPDATE <table_name> 
+set column_name="value"
+where condition;
+
+
+
+
+## Insert query
+INSERT INTO <table_name> (column1, column2, column3)
+VALUES (value1, value2, value3);
+
+
+## DELETE query
+DELETE FROM <table_name>
+WHERE id="   ";
+
+
+
+## JOIN SYNTEX
+
+SELECT	* from <table_name> t1
+JOIN <table_name_2> t2 on 
+t2.col1 = t2.col2;
+
+
+
+
+
+
+
+
+
+task:
+1. When to use having.
+2. Restore DUMP shared by Paras.
+3. DDL, DML
+4. learn distnict and group by
+5. min and max and other basic functions
+6. learn Having keyword
+
+
+
+
+
+
+evening session 
+
+
+1. Executing queries
+2. naming conventions
+3. Formating query
+4. Agreegate functions
+5. Using the restored dump of database shared by Paras.
+6. Execution flow in sql query.
+
+
+
+
+convenctions
+1. Table name should be in plurals
+2. Table name should be snake case and not pascel case.
+3. column name should be snake case .
+
+
+commands - 
+- docker exec -it <name> shell_name
+
+
+task
+1. Explore pg_restore command 
+2. Perform agreegation functions on Track table
+	- max, min, sum using the three coulumns -max of milliseconds, min of bytes, sum of unitprice.
+ 	- also calculate how many kiloBytes/second using bytes and milliseconds column too.
+	- 
+
+3. Employee table - Calculate the count of the people by their city and sort them alphabatically.
+4. Invoice table - count the number of invoice from jan to march of 2009 using the invoice date column and also show the sum 					of total in another column of all the invoice on that range.
+5. draw.io
+6. SOLID principals
+7. Normalization
+8. Atomicity.
+9. Create a branch on your git repo and commit changes and create a pr, add Paras as reviewer.
+	- Push the queries in a .sql file.
+
+
+
+
+
+
+

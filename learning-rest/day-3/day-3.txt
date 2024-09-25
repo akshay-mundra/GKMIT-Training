@@ -32,3 +32,8 @@ Base 64 -
 https://builtin.com/software-engineering-perspectives/base64-encoding
 
 
+---update to be given
+
+In yesterday's session we learned about postman authentication types, request and response headers.
+we also discussed about the rate limiting and CORS and its best practice.
+and we were given task to learn about the base64 algorightm and the Cookie based auyh and session based auth.
