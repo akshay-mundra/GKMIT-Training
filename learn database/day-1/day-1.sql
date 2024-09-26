@@ -5,7 +5,7 @@ SELECT
   CONCAT("FirstName", ' ', "LastName")
   AS "FullName"
 FROM
-	"Customer"
+  "Customer"
 ORDER BY
   "FirstName" asc;
     
@@ -13,14 +13,14 @@ ORDER BY
 -- select first name and last name using concatination (another method)
 
 SELECT
-	"FirstName" ||
+  "FirstName" ||
   ' ' ||
   "LastName"
   AS "FullName"
 FROM
-	"Customer"
+  "Customer"
 ORDER BY
-	"FirstName" ASC;
+  "FirstName" ASC;
 
 
 
@@ -31,7 +31,7 @@ ORDER BY
 SELECT
   MAX("Milliseconds")
 FROM
-	"Track";
+  "Track";
 
 
 -- find min in bytes
