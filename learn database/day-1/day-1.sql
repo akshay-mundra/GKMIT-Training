@@ -2,11 +2,11 @@
 -- Select firstname and last name in a single column using concatination
 
 SELECT
-  CONCAT("FirstName", ' ', "LastName") 
+  CONCAT("FirstName", ' ', "LastName")
   AS "FullName"
-FROM 
+FROM
 	"Customer"
-ORDER BY 
+ORDER BY
   "FirstName" asc;
     
 
@@ -18,7 +18,7 @@ SELECT
   "LastName"
   AS "FullName"
 FROM
-	"Customer" 
+	"Customer"
 ORDER BY
 	"FirstName" ASC;
 
@@ -30,13 +30,13 @@ ORDER BY
 
 SELECT
   MAX("Milliseconds")
-FROM 
+FROM
 	"Track";
 
 
 -- find min in bytes
 
-SELECT 
+SELECT
   MIN("Bytes")
 FROM
   "Track";
@@ -44,7 +44,7 @@ FROM
 
 -- calculate sum of UnitPrice 
 
-SELECT 
+SELECT
   SUM("UnitPrice") AS "Total Unit Price"
 FROM
   "Track";
@@ -54,7 +54,7 @@ FROM
 
 SELECT 
   *,
-  CONCAT("Bytes"/1024, '/' , "Milliseconds"/1000, ' KB/s') 
+  CONCAT("Bytes"/1024, '/' , "Milliseconds"/1000, ' KB/s')
   AS "Speed"
 FROM
   "Track"
@@ -66,11 +66,11 @@ FROM
 
 SELECT
   "City",
-  COUNT("EmployeeId") 
+  COUNT("EmployeeId")
   AS  "Employee Count"
 FROM
   "Employee"
-GROUP BY 
+GROUP BY
   "City"
 ORDER BY 
   "City";
