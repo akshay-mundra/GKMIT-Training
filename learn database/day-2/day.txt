@@ -1,0 +1,98 @@
+date - 26-09-2024
+
+-- Joins
+-- sql query practise
+-- sub query - different ways to use 
+	- In from
+	- At head
+	- At where after condition
+
+
+getting the count of tracks in playlist
+
+SELECT 
+	"Name",
+  (
+		SELECT 
+    	COUNT("TrackId")
+    FROM
+    	"PlaylistTrack" AS p
+    WHERE p."PlaylistId" = "Playlist"."PlaylistId"
+  ) AS "Play Count"
+FROM "Playlist"
+ORDER BY "Play Count" desc;
+
+
+
+
+
+
+
+
+
+TASK:
+	1. solve all inner join question using sub query. (optional)
+
+
+
+topics:
+Transactions, views, materializattion, cases, 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## SELF TODO
+1. What are power queries and difference with resource internsive real time queries.
+2. prepare a document stating the process to restore the dump database.
+3. 
+
+
+
+
+
+
+SOLID
+resources -  https://www.reddit.com/r/learnprogramming/comments/cr3m01/solid_design_principles_for_everyone/
+
+Databse views
+https://dashboardfox.com/blog/what-is-a-database-view-and-how-does-it-help-business-intelligence/
+
+sql case statement
+https://www.geeksforgeeks.org/sql-case-statement/
+
+DB transactions
+https://cybernerdie.medium.com/database-transactions-explained-a-deep-dive-into-reliability-17ab4e17117a
+
+
+
+materialized views
+https://aws.amazon.com/what-is/materialized-view/#:~:text=A%20materialized%20view%20is%20a,tables%20for%20faster%20data%20retrieval.
+
+
+Arrays in postgres
+https://www.postgresql.org/docs/current/arrays.html
+
+json in postgres
+
+jsonb in postgres
+
+
+
+
+
+
+
+
+
+

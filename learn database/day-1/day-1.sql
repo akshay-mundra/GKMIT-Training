@@ -90,7 +90,16 @@ FROM
 WHERE
   "InvoiceDate" 
   BETWEEN '2009-01-01' AND '2009-03-31';
-
+--and
+SELECT 
+  'jan 2009 - march 2009' AS "Range",
+  COUNT("InvoiceId") AS "Total Invoices",
+  SUM("Total") AS "Total Value"
+FROM
+  "Invoice"
+WHERE
+  "InvoiceDate" 
+  BETWEEN '2009-01-01' AND '2009-03-31';
 
 -- above question in groups
 
@@ -105,4 +114,31 @@ WHERE
   BETWEEN '2009-01-01' AND '2009-03-31'
 GROUP BY 
   "InvoiceDate";
+
+
+
+-- group by month
+SELECT 
+  EXTRACT(MONTH FROM "InvoiceDate") as "Month",
+  COUNT("InvoiceId") AS "Total Invoices",
+  SUM("Total") AS "Total Value"
+FROM
+  "Invoice"
+WHERE
+  "InvoiceDate" 
+  BETWEEN '2009-01-01' AND '2009-03-31'
+GROUP BY 
+  EXTRACT(MONTH FROM "InvoiceDate")
+ORDER BY
+  EXTRACT(MONTH FROM "InvoiceDate");
+
+
+
+
+
+
+
+
+
+
 
