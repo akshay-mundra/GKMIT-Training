@@ -110,4 +110,47 @@ task
 
 
 
+-- update to be given
+In yerterday's session we got started with basics of sql and did setup for the docker, postgress and postbird.
+yesterday we also learned about executing queries, table and column naming conventions, formating query properly, 
+agreegate functions and execution flow of the sql query.
+then we were given some task to write sql query and create a PR,
+explore about draw.io
+learn about solid principles,
+normailzation and 
+atomicity
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
