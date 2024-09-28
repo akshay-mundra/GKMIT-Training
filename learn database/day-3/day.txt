@@ -1,0 +1,47 @@
+today
+1. indexing
+	- regular indexing
+	- composite indexing.
+2. uuid
+3. extensions.
+4. constraints
+	- required
+	- unique
+	- Enums - best practice- required, assign default value
+	- foreign key
+5. soft delete or archive
+6. variable convention in postgress -> :userID this created a variable that will be prompt to input when running a query.
+7. 
+
+
+
+todo
+1. array inbuilt functions in postgress
+2. Learn CASCADE
+3. taskkkk
+
+	track, playlist, album, artist, genre
+
+	write apis for crud operations, write queries, payload, etc.
+
+	format --
+
+	url,
+	method,
+	body,
+	response,
+	status,
+	query
+
+
+get the row after update
+	->
+	update users
+	set name=""
+	where id = ''
+	returning *;
+
+Use soft delete using update keyword for any delete query.
+
+extensions
+1. uuid-osp -> for using uuid in postgres.
