@@ -42,6 +42,41 @@ Transactions, views, materializattion, cases,
 
 
 
+Cases in sql
+
+1. syntex
+
+select
+	case
+		when condition then 
+			case 
+				when in-condition then result...
+				...
+				..
+				else else-result
+			end
+
+		when condition2 then result2
+
+		else ....
+	end as ...
+.....
+
+
+-- syntex other
+
+select
+	case expression
+		when value then result
+		...
+		...
+		else ...
+	end as ...
+...
+
+
+
+
 
 
 
@@ -86,7 +121,7 @@ https://www.postgresql.org/docs/current/arrays.html
 json in postgres
 
 jsonb in postgres
-
+-- use postgres docs
 
 
 
