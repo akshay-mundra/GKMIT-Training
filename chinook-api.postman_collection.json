@@ -1,0 +1,2235 @@
+{
+	"info": {
+		"_postman_id": "949476e3-e2b1-493b-b7b6-549bd7b631e6",
+		"name": "chinook-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38476465"
+	},
+	"item": [
+		{
+			"name": "tracks",
+			"item": [
+				{
+					"name": "get all tracks",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const response = {",
+									"    data: [",
+									"        {",
+									"            \"Name\": \"random name \",",
+									"            \"MediaType\": \"music\",",
+									"            \"Composer\": \"abc\",",
+									"            \"Milliseconds\": \"32423423\",",
+									"            \"Bytes\": \"3425432\",",
+									"            \"UnitPrice\": \"234\",",
+									"            \"GenreId\": \"\",",
+									"            \"AlbumId\": \"\"",
+									"        }",
+									"    ]",
+									"}",
+									"",
+									"",
+									"`",
+									"SELECT",
+									"    *",
+									"FROM Track",
+									"WHERE",
+									"    is_deleted=null",
+									"`",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/tracks",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"tracks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get a track",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const response = {",
+									"    data: {",
+									"        \"TrackId\": \"5\",",
+									"        \"Name\": \"random name \",",
+									"        \"MediaType\": \"7\",",
+									"        \"Composer\": \"abc\",",
+									"        \"Milliseconds\": \"32423423\",",
+									"        \"Bytes\": \"3425432\",",
+									"        \"UnitPrice\": \"234\",",
+									"        \"GenreId\": \"\",",
+									"        \"AlbumId\": \"\"",
+									"    }",
+									"}",
+									"",
+									"",
+									"`",
+									"SELECT",
+									"    *",
+									"FROM Track",
+									"WHERE TrackId=5 and is_deleted=null;",
+									"`",
+									"",
+									"`take track id from url path variable`",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/tracks/:id",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"tracks",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "udpate track",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const response = {",
+									"    data: {",
+									"        \"TrackId\": \"5\",",
+									"        \"Name\": \"random name \",",
+									"        \"MediaType\": \"7\",",
+									"        \"Composer\": \"abc\",",
+									"        \"Milliseconds\": \"32423423\",",
+									"        \"Bytes\": \"32\",",
+									"        \"UnitPrice\": \"32\",",
+									"        \"GenreId\": \"32\",",
+									"        \"AlbumId\": \"32\"",
+									"    }",
+									"}",
+									"",
+									"`",
+									"UPDATE Track ",
+									"SET ",
+									"    \"TrackId\"=5,",
+									"    \"Name\"= \"random name \",",
+									"    \"MediaType\"= 7,",
+									"    \"Composer\"= \"sdfs\",",
+									"    \"Milliseconds\"= 423,",
+									"    \"Bytes\"= 32,",
+									"    \"UnitPrice\"= 32,",
+									"    \"GenreId\"= 32,",
+									"    \"AlbumId\"= 32",
+									"WHERE TrackId=id and is_deleted=null",
+									"returning *;",
+									"`"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"Name\": \"random name \",\n    \"MediaType\": \"7\",\n    \"Composer\": \"abc\",\n    \"Milliseconds\": \"32423423\",\n    \"Bytes\": \"3425432\",\n    \"UnitPrice\": \"234\",\n    \"GenreId\": \"32\",\n    \"AlbumId\": \"32\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/tracks/:id",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"tracks",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete track",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const response = {}",
+									"",
+									"",
+									"`",
+									"Update Track",
+									"set ",
+									"    is_deleted=true",
+									"where TrackId=id and is_deleted=null;",
+									"`"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/tracks/:id",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"tracks",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create a track",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const response = {}",
+									"",
+									"",
+									"`",
+									"INSERT INTO Track ",
+									"    (",
+									"        Name,",
+									"        AlbumId,",
+									"        MediaTypeId,",
+									"        GenreId,",
+									"        Composer,",
+									"        Milliseconds,",
+									"        Bytes,",
+									"        UnitPrice",
+									"    )",
+									"",
+									"    VALUES",
+									"    (",
+									"        '...',",
+									"        32,",
+									"        322,",
+									"        23,",
+									"        '...',",
+									"        432,",
+									"        423,",
+									"        243",
+									"    )",
+									"    ",
+									"`"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"Name\": \"random name \",\n    \"MediaType\": \"7\",\n    \"Composer\": \"abc\",\n    \"Milliseconds\": \"32423423\",\n    \"Bytes\": \"3425432\",\n    \"UnitPrice\": \"234\",\n    \"GenreId\": \"32\",\n    \"AlbumId\": \"32\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/tracks",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"tracks"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "artists",
+			"item": [
+				{
+					"name": "artists-albums",
+					"item": [
+						{
+							"name": "get all albums",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"const response = {",
+											"    data: [",
+											"        {",
+											"            \"AlbumId\": \"\",",
+											"            \"Title\": \"\",",
+											"            \"ArtistId\": \"\"",
+											"        }",
+											"    ]",
+											"}",
+											"",
+											"",
+											"`",
+											"select ",
+											"    al.AlbumId,",
+											"    al.Title,",
+											"    al.ArtistId,",
+											"from Albums as al ",
+											"where al.ArtistId = id;",
+											"`",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/artists/:id/albums",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"artists",
+										":id",
+										"albums"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get a album",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"const response = {",
+											"    data: ",
+											"        {",
+											"            \"AlbumId\": \"\",",
+											"            \"Title\": \"\",",
+											"            \"ArtistId\": \"\"",
+											"        }",
+											"}",
+											"",
+											"",
+											"`",
+											"select *",
+											"from Album",
+											"where AlmumId=albumId;",
+											"`",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}/artists/:id/albums/:albumId",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"artists",
+										":id",
+										"albums",
+										":albumId"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "5"
+										},
+										{
+											"key": "albumId",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "udpate album",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"",
+											"`",
+											"Update Album",
+											"set ",
+											"    Title='',",
+											"    ArtistId=id",
+											"where AlbumId=albumId",
+											"`",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"AlbumId\": \"\",\n    \"Title\": \"\",\n    \"ArtistId\": \"\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/artists/:id/albums/:albumId",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"artists",
+										":id",
+										"albums",
+										":albumId"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "5"
+										},
+										{
+											"key": "albumId",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete album",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"const response = {}",
+											"",
+											"",
+											"`",
+											"Update Album",
+											"set ",
+											"    is_deleted=true",
+											"where ",
+											"    AlbumId=id and",
+											"    is_deleted=null;",
+											"`"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}/artists/:id/albums/:albumId",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"artists",
+										":id",
+										"albums",
+										":albumId"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										},
+										{
+											"key": "albumId",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "create a album",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"",
+											"`",
+											"insert into Album",
+											"    (Title, ArtistId)",
+											"    Values (",
+											"        Title='',",
+											"        ArtistId=id",
+											"    );",
+											"`",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"AlbumId\": \"\",\n    \"Title\": \"\",\n    \"ArtistId\": \"\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/artists/:id/albums",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"artists",
+										":id",
+										"albums"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "get all artists",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const response = {",
+									"    data: [",
+									"        {",
+									"            \"ArtistId\": \"\",",
+									"            \"Name\": \"\"",
+									"        }",
+									"    ]",
+									"}",
+									"",
+									"",
+									"`",
+									"SELECT",
+									"    *",
+									"FROM Artist",
+									"WHERE is_deleted=null;",
+									"`",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/artists",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"artists"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get a artist",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const response = {",
+									"    data:",
+									"        {",
+									"            \"ArtistId\": \"\",",
+									"            \"Name\": \"\"",
+									"        }",
+									"}",
+									"",
+									"",
+									"`",
+									"SELECT",
+									"    *",
+									"FROM Artist",
+									"WHERE ",
+									"    ArtistId=id and",
+									"    is_deleted=null;",
+									"`",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/artists/:id",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"artists",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "udpate artist",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const response = {",
+									"    data:",
+									"        {",
+									"            \"ArtistId\": \"\",",
+									"            \"Name\": \"\"",
+									"        }",
+									"}",
+									"",
+									"",
+									"`",
+									"Update Artist",
+									"set",
+									"    Name=\"\"",
+									"where ArtisId=id;",
+									"`",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"ArtistId\": \"\",\n    \"Name\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/artists/:id",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"artists",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete artist",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const response = {}",
+									"",
+									"",
+									"`",
+									"Update Artist",
+									"set ",
+									"    is_deleted=true",
+									"where ",
+									"    ArtistId=id and",
+									"     is_deleted=null;",
+									"`"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/tracks/:id",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"tracks",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create a artist",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const response = {",
+									"}",
+									"",
+									"",
+									"`",
+									"insert into Artist",
+									"    (",
+									"        Name",
+									"    )",
+									"    Values",
+									"    (",
+									"        \"..\"",
+									"    )",
+									"`",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"ArtistId\": \"\",\n    \"Name\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/artists",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"artists"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "genres",
+			"item": [
+				{
+					"name": "genre-track",
+					"item": [
+						{
+							"name": "get all tracks",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"const response = {",
+											"    data: [",
+											"        {",
+											"            \"Name\": \"random name \",",
+											"            \"MediaType\": \"music\",",
+											"            \"Composer\": \"abc\",",
+											"            \"Milliseconds\": \"32423423\",",
+											"            \"Bytes\": \"3425432\",",
+											"            \"UnitPrice\": \"234\",",
+											"            \"GenreId\": \"\",",
+											"            \"AlbumId\": \"\"",
+											"        }",
+											"    ]",
+											"}",
+											"",
+											"",
+											"`",
+											"SELECT",
+											"    *",
+											"FROM Track",
+											"WHERE is_deleted=null and GenreId=id;",
+											"`",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/genres/:id/tracks",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"genres",
+										":id",
+										"tracks"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get a track",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"const response = {",
+											"    data: {",
+											"            \"Name\": \"random name \",",
+											"            \"MediaType\": \"music\",",
+											"            \"Composer\": \"abc\",",
+											"            \"Milliseconds\": \"32423423\",",
+											"            \"Bytes\": \"3425432\",",
+											"            \"UnitPrice\": \"234\",",
+											"            \"GenreId\": \"\",",
+											"            \"AlbumId\": \"\"",
+											"        }",
+											"}",
+											"",
+											"",
+											"`",
+											"select *",
+											"from Track",
+											"where TrackId=trackId;",
+											"`",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}/genres/:id/tracks/:trackId",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"genres",
+										":id",
+										"tracks",
+										":trackId"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "5"
+										},
+										{
+											"key": "trackId",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "get all genres",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const response = {",
+									"    data: [",
+									"        {",
+									"            \"GenreId\": \"\",",
+									"            \"Name\": \"\"",
+									"        }",
+									"    ]",
+									"}",
+									"",
+									"",
+									"`",
+									"SELECT",
+									"    *",
+									"FROM Genre",
+									"WHERE is_deleted=null;",
+									"`",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/genres",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"genres"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get a genre",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const response = {",
+									"    data:",
+									"        {",
+									"            \"GenreId\": \"\",",
+									"            \"Name\": \"\"",
+									"        }",
+									"}",
+									"",
+									"",
+									"`",
+									"SELECT",
+									"    *",
+									"FROM Genre",
+									"WHERE ",
+									"    GenreId=id and",
+									"    is_deleted=null;",
+									"`",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/genres/:id",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"genres",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "udpate genre",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const response = {",
+									"    data:",
+									"        {",
+									"            \"GenreId\": \"\",",
+									"            \"Name\": \"\"",
+									"        }",
+									"}",
+									"",
+									"",
+									"`",
+									"Update genre",
+									"set",
+									"    Name=\"...\"",
+									"where GenreId=id",
+									"returning *;",
+									"`",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"Name\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/genres/:id",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"genres",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete genre",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const response = {}",
+									"",
+									"",
+									"`",
+									"Update Genre",
+									"set ",
+									"    is_deleted=true",
+									"where ",
+									"    GenreId=id and",
+									"    is_deleted=null;",
+									"`"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/genres/:id",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"genres",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create a genre",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const response = {",
+									"}",
+									"",
+									"",
+									"`",
+									"insert into Genre",
+									"    (",
+									"        Name",
+									"    )",
+									"    Values",
+									"    (",
+									"        \"..\"",
+									"    )",
+									"`",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"Name\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/genres",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"genres"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "media types",
+			"item": [
+				{
+					"name": "mediatypes-track",
+					"item": [
+						{
+							"name": "get all tracks",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"const response = {",
+											"    data: [",
+											"        {",
+											"            \"Name\": \"random name \",",
+											"            \"MediaType\": \"music\",",
+											"            \"Composer\": \"abc\",",
+											"            \"Milliseconds\": \"32423423\",",
+											"            \"Bytes\": \"3425432\",",
+											"            \"UnitPrice\": \"234\",",
+											"            \"GenreId\": \"\",",
+											"            \"AlbumId\": \"\"",
+											"        }",
+											"    ]",
+											"}",
+											"",
+											"",
+											"`",
+											"SELECT",
+											"    *",
+											"FROM Track",
+											"WHERE is_deleted=null and MediaTypeId=id;",
+											"`",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/mediatypes/:id/tracks",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"mediatypes",
+										":id",
+										"tracks"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get a track",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"const response = {",
+											"    data: {",
+											"            \"Name\": \"random name \",",
+											"            \"MediaType\": \"music\",",
+											"            \"Composer\": \"abc\",",
+											"            \"Milliseconds\": \"32423423\",",
+											"            \"Bytes\": \"3425432\",",
+											"            \"UnitPrice\": \"234\",",
+											"            \"GenreId\": \"\",",
+											"            \"AlbumId\": \"\"",
+											"        }",
+											"}",
+											"",
+											"",
+											"`",
+											"select *",
+											"from Track",
+											"where TrackId=trackId;",
+											"`",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}/mediatypes/:id/tracks/:trackId",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"mediatypes",
+										":id",
+										"tracks",
+										":trackId"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "5"
+										},
+										{
+											"key": "trackId",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "get all mediatypes",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const response = {",
+									"    data: [",
+									"        {",
+									"            \"MediaTypeId\": \"\",",
+									"            \"Name\": \"\"",
+									"        }",
+									"    ]",
+									"}",
+									"",
+									"",
+									"`",
+									"SELECT",
+									"    *",
+									"FROM MediaType",
+									"WHERE is_deleted=null;",
+									"`",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/mediatypes",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"mediatypes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get a genre",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const response = {",
+									"    data:",
+									"        {",
+									"            \"MediaTypeId\": \"\",",
+									"            \"Name\": \"\"",
+									"        }",
+									"}",
+									"",
+									"",
+									"`",
+									"SELECT",
+									"    *",
+									"FROM MediaType",
+									"WHERE ",
+									"    MediaTypeId=id and",
+									"    is_deleted=null;",
+									"`",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/mediatypes/:id",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"mediatypes",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "udpate genre",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const response = {",
+									"    data:",
+									"        {",
+									"            \"MediaTypeId\": \"\",",
+									"            \"Name\": \"\"",
+									"        }",
+									"}",
+									"",
+									"",
+									"`",
+									"Update MediaType",
+									"set",
+									"    Name=\"...\"",
+									"where MediaTypeId=id",
+									"returning *;",
+									"`",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"Name\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/mediatypes/:id",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"mediatypes",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete genre",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const response = {}",
+									"",
+									"",
+									"`",
+									"Update MediaType",
+									"set ",
+									"    is_deleted=true",
+									"where ",
+									"    MediaTypeId=id and",
+									"    is_deleted=null;",
+									"`"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/mediatypes/:id",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"mediatypes",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create a genre",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const response = {",
+									"}",
+									"",
+									"",
+									"`",
+									"insert into MediaTypeId",
+									"    (",
+									"        Name",
+									"    )",
+									"    Values",
+									"    (",
+									"        \"..\"",
+									"    )",
+									"`",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"Name\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/mediatypes",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"mediatypes"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "playlist",
+			"item": [
+				{
+					"name": "playlist-tracks",
+					"item": [
+						{
+							"name": "get all tracks",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"const response = {",
+											"    data: [",
+											"        {",
+											"            \"Name\": \"random name \",",
+											"            \"MediaType\": \"music\",",
+											"            \"Composer\": \"abc\",",
+											"            \"Milliseconds\": \"32423423\",",
+											"            \"Bytes\": \"3425432\",",
+											"            \"UnitPrice\": \"234\",",
+											"            \"GenreId\": \"\",",
+											"            \"AlbumId\": \"\"",
+											"        }",
+											"    ]",
+											"}",
+											"",
+											"",
+											"`",
+											"SELECT",
+											"    *",
+											"FROM \"Track\" t1",
+											"join \"PlaylistTrack\" pt ",
+											"on t1.\"TrackId\" = pt.\"TrackId\"",
+											"join \"Playlist\" p ",
+											"on pt.\"PlaylistId\"= id;",
+											"`",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/playlists/:id/tracks",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"playlists",
+										":id",
+										"tracks"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get a track",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"const response = {",
+											"    data: {",
+											"            \"Name\": \"random name \",",
+											"            \"MediaType\": \"music\",",
+											"            \"Composer\": \"abc\",",
+											"            \"Milliseconds\": \"32423423\",",
+											"            \"Bytes\": \"3425432\",",
+											"            \"UnitPrice\": \"234\",",
+											"            \"GenreId\": \"\",",
+											"            \"AlbumId\": \"\"",
+											"        }",
+											"}",
+											"",
+											"",
+											"`",
+											"select *",
+											"from Track",
+											"where TrackId=trackId and is_deleted=null;",
+											"`",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}/mediatypes/:id/tracks/:trackId",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"mediatypes",
+										":id",
+										"tracks",
+										":trackId"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "5"
+										},
+										{
+											"key": "trackId",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete track from playlist",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"{}",
+											"",
+											"`",
+											"update PlaylistTrack",
+											"set ",
+											"    is_deleted=true",
+											"where TrackId=trackId and PlaylistId=id;",
+											"`"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}/playlists/:id/tracks/:trackId",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"playlists",
+										":id",
+										"tracks",
+										":trackId"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "5"
+										},
+										{
+											"key": "trackId",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "get all playlists",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const response = {",
+									"    data: [",
+									"        {",
+									"            \"Name\" :\"...\",",
+									"            \"PlaylistId\": \"\"",
+									"        }",
+									"    ]",
+									"}",
+									"",
+									"",
+									"",
+									"`",
+									"select *",
+									"from Playlist ",
+									"where is_delete=false;",
+									"`"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/playlists",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"playlists"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get a playlist",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const response = {",
+									"    data: {",
+									"            \"Name\" :\"...\",",
+									"            \"PlaylistId\": \"\"",
+									"        }",
+									"}",
+									"",
+									"",
+									"",
+									"`",
+									"select *",
+									"from Playlist ",
+									"where ",
+									"    PlaylistId=id and ",
+									"    is_delete=false;",
+									"`"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/playlists/:id",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"playlists",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add a track to playlist",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"{}",
+									"",
+									"`",
+									"insert into PlaylistTrack",
+									"    (",
+									"        PlaylistId,",
+									"        TrackId",
+									"    )",
+									"    values (",
+									"        id,",
+									"        trakcId",
+									"    )",
+									"`"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"TrackId\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/playlists/:id",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"playlists",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "udpate a playlist",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const response = {}",
+									"",
+									"`",
+									"Update Playlist ",
+									"set ",
+									"    Name=\"...\"",
+									"where ",
+									"    PlaylistId = id and ",
+									"    is_delete=false;",
+									"`"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"Name\": \"...\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/playlists/:id",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"playlists",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create a playlist",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const response = {}",
+									"",
+									"",
+									"`",
+									"Insert into Playlist ",
+									"    (",
+									"        Name",
+									"    )",
+									"    Values ",
+									"    (",
+									"        \"...\"",
+									"    )",
+									"`"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"Name\": \"...\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/playlists",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"playlists"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete playlist",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const response = {}",
+									"",
+									"",
+									"`",
+									"Update Playlist ",
+									"set ",
+									"    is_delete=true;",
+									"",
+									"`"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/playlists/:id",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"playlists",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "BASE_URL",
+			"value": "http://localhost:5000/api",
+			"type": "string"
+		}
+	]
+}
