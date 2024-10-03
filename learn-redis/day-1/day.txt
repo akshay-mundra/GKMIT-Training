@@ -1,0 +1,21 @@
+# Redis
+
+
+resource: https://medium.com/codex/7-redis-features-you-might-not-know-bab8c9beb2c
+
+
+today
+1. discuss doubts
+2. redis
+
+	- naming conventions
+	- db to cache
+	- cache to db
+	- 
+
+
+TODO
+	- methods in redis to perform crud
+	- learn about different data types in redis.
+	- geospatial data in redis
+	- working with leaderboard of scores of users.

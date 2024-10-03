@@ -1,0 +1,40 @@
+Q1. Add scores of users to leaderboard
+
+syntex: 
+
+	ZADD key value name value name ....
+
+commands: 
+	
+	ZADD typing:score 75 "abc" 45 "def" 54 "ghi" 88 "jkl" 102 "mno"
+	ZREVRANGE typing:score 0 -1 withscores
+
+
+
+Q2. Working with redis's geospatial data and finding shortest distance.
+
+syntex:
+	GEOADD key longitude latitude name
+
+commands:
+	
+	add locations to the foods:street
+
+	GEOADD foods:street 24.58210908785163 73.67898793438712 shop:cfc
+	GEOADD foods:street 24.58204859132967 73.67984103274604 shop:lsr
+	GEOADD foods:street 24.584077425384255 73.69850338312148 shop:ppb
+	GEOADD foods:street 24.599226231181937 73.67872581436666 shop:bm
+	GEOADD foods:street 24.607156075285097 73.70139058722296 shop:sjfc
+
+
+	search all near 5 km radius using the current long lat of user 
+	
+	GEOSEARCH foods:street FROMLONLAT 24.59774978840427 73.7102448462459 BYRADIUS 5 km WITHDIST
+
+
+
+
+
+
+	
+
