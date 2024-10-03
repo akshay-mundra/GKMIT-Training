@@ -1,0 +1,108 @@
+WHAT
+
+DIFF b/w sql and no sql.
+
+NO-sql database
+- They are not optimized for relations.
+- No sql engine / schema less
+
+sql database
+- query engine
+- sql process
+- schema full
+
+
+some nosql database uses sql query engine and they are called sql like dbs.
+
+
+WHY
+
+NO sql
+- ease of access / implementation
+- premitive datatypes and more array and json support with optimization.
+- fast single collection operations 
+
+
+SQL
+- Plan of action
+- Old datatypes with least approach
+- slow single table collection as compared to mongo.
+
+
+other notes 
+- so we use no sql for less rigid databse.
+- 
+
+
+
+# Getting started with MONGO DB
+
+
+- In mongo db to create a one to one relation ship we can directly nest that object inside that document however only if that 	object is small in size and is not bound to extend in future.
+
+- in one to many relationship if the number of relationships are known then we can make a array of objects however if they can increase then we create a another collection.
+
+- avoid many to many in mongo in most cases.
+	-as it could be done using an array storing a ids of a collection that will create a one to many relationship but it could be denoted as many to many relationships.
+
+- To avoid m to m relationship we use redundancy (its bad practice) but its really common in mongo db.
+
+
+
+
+
+CRUD OPERATIONS
+
+methods
+- find
+- findOne
+- insertOne
+- insertMany
+- updateOne
+- remove
+- count
+- limit
+- skip
+- sort
+
+
+
+-- always use $set when updating a document.
+-- 
+
+
+
+TODO
+1. create a array of object of 3 element and delete 2nd element using pull operator.
+2. use all update operators using the mflix database.
+3. use limit, sort, and skip on mflix and show implementations.
+4. use $and and $or in a single query.
+5. implement regex to find all that follows that regex on plot of the movies collections also use skip and limit - 10 docs pr time.
+
+
+evening session
+
+1. task checkup
+2. Transactions in mongodb (only intro)
+3. 
+
+
+Transactions-
+	requirements
+		- Replica should be set up then only transactions will work.
+		- 
+
+
+
+
+
+
+
+
+TODO
+1. Explore regex
+2. 
+
+
+
+
