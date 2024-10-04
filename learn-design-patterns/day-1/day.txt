@@ -1,0 +1,27 @@
+Design Patterns
+ and what is design pattern and why to use
+
+-- type of patterns
+
+1. Singleton pattern
+
+2. Factory method pattern
+
+3. Obsesrver pattern
+
+4. Decorator pattern
+
+5. Proxy pattern
+
+6. Command Pattern
+
+
+7. SOLID principles
+	- Single responsibility 
+	- Open/Closed 
+	- Liskov substitution
+
+TASK
+	- Learn Interface Segregation
+	- Learn Dependency injection
+	- Write bad and good code for interface segregation and dependency injection.
