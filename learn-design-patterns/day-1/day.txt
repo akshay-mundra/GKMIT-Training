@@ -25,3 +25,10 @@ TASK
 	- Learn Interface Segregation
 	- Learn Dependency injection
 	- Write bad and good code for interface segregation and dependency injection.
+
+
+
+TO correct
+
+- Naming convenctions	
+- File system for the task - create a file for each method or design pattern or SOLID principle.
