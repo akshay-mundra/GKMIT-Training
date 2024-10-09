@@ -1,0 +1,51 @@
+1. polling
+2. Coding standards.
+
+Folder structure
+
+1. husky --> run before pushing
+2. config
+3. constants
+4. consumers
+5. controllers
+6. helpers - helpers that can be used in services to avoid circular dependency.
+7. middlewares
+8. migrations
+9. models
+10. routes
+11. schedulers --> contains files to perform cron jobs
+12. serializers --> used to transoform data according to specified response ex- change casing (snake case to pascel etc...)
+13. services - main logic -> services can call other services however helpers can not call services.
+14. sheets --> data and excel sheets
+15. swagger - create api docs
+16. templates --> ejs templates
+17. tests --> contains test
+18. utils - used to write third party code.
+19. validators
+
+
+
+using services and helpers come under lean model and lean controller.
+
+
+
+TODO:
+
+	- ORM and sequalize learn
+	- eslint
+	- prettier
+	- swagger
+	- diff b/w package.json and package.lock.json
+	and other useful tools.
+
+
+
+
+afternoon meet with amit sagvan
+-	deep dive in databases sql and nosql
+-	types of db in redis.
+- 	deep dive design patterns
+-	deep dive everything learned in past
+- 	SOLID principles
+-	b-tree in indexing in db
+-	
