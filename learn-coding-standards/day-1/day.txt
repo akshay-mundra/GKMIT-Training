@@ -13,16 +13,15 @@ Folder structure
 8. migrations
 9. models
 10. routes
-11. schedulers
-12. serializers
+11. schedulers --> contains files to perform cron jobs
+12. serializers --> used to transoform data according to specified response ex- change casing (snake case to pascel etc...)
 13. services - main logic -> services can call other services however helpers can not call services.
-14. sheets
+14. sheets --> data and excel sheets
 15. swagger - create api docs
-16. templates
-17. tests
-18. toolbox
-19. utils - used to write third party code.
-20. validators
+16. templates --> ejs templates
+17. tests --> contains test
+18. utils - used to write third party code.
+19. validators
 
 
 
