@@ -1,3 +1,9 @@
+-- discussion about topics of prev class
+
+code optimization
+
+
+
 1.  optimization
 	-api optimization
 2. LLD
@@ -10,7 +16,7 @@
 		- sometimes u have to write the algo in another languguage (compiler lang) to optimize..
 
 	2. database 
-		- Query - subqueries, databse queries should be optimized, select only the required data and no unnecessery fields, 		indexing, etc.
+		- Query - subqueries, databse queries should be optimized, select only the required data and no unnecessery fields, 		indexing, views (materialized) etc.
 		- databases structure (most important)
 2. HLD
 	1. Redis
