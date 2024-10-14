@@ -1,0 +1,146 @@
+1. what is docker and why to use
+2. what is docker engine
+3. container vs virtual machine
+4. docker file vs docker compose
+5. container vs image
+6. DockerFile - built docker image
+
+Afternoon
+7. CMD vs ENTRYPOINT
+8. docker container commands
+9. post mapping -> -p SYSTEM_POST:DOCKER_PORT
+10. network in docker, using ping pong in two container
+11. How we define volumes in docker compose.
+
+
+
+
+
+
+-- docker image commands
+
+$ docker image inspect <image-name> 
+	-- gives a details info of image
+
+$ docker image history -H <image>
+	-- gives history of image, -H -> human redable format
+
+$ docker image rm <image>
+	-- deletes image
+	alias -> docker rmi, docker image remove
+
+$ docker image save <image>
+	-- saves the image in a file which could be used again
+
+$ docker images, docker images ls, docker images list
+	-- show all the images currently in use.
+
+$ docker image pull <name>
+	-- this pulls the image from the docker hub
+
+$ docker image push <name>
+	-- this push the image to the docker hub
+
+
+
+
+docker container commands
+
+$ docker container attach
+	--	Attach local standard input, output, and error streams to a running container
+	
+$ docker container commit
+	--	Create a new image from a container's changes
+	
+$ docker container cp
+	--	Copy files/folders between a container and the local filesystem
+	
+$ docker container create
+	--	Create a new container
+	
+$ docker container diff
+	--	Inspect changes to files or directories on a container's filesystem
+	
+$ docker container export
+	--	Export a container's filesystem as a tar archive
+	
+$ docker container inspect
+	--	Display detailed information on one or more containers
+	
+$ docker container kill
+	--	Kill one or more running containers
+	
+$ docker container logs
+	--	Fetch the logs of a container
+	
+$ docker container pause
+	--	Pause all processes within one or more containers
+	
+$ docker container port
+	--	List port mappings or a specific mapping for the container
+	
+$ docker container prune
+	--	Remove all stopped containers
+	
+$ docker container rename
+	--	Rename a container
+	
+$ docker container restart
+	--	Restart one or more containers
+	
+$ docker container rm
+	--	Remove one or more containers
+	
+$ docker container start
+	--	Start one or more stopped containers
+	
+$ docker container stats
+	--	Display a live stream of container(s) resource usage statistics
+	
+$ docker container stop
+	--	Stop one or more running containers
+	
+$ docker container top
+	--	Display the running processes of a container
+	
+$ docker container unpause
+	--	Unpause all processes within one or more containers
+	
+$ docker container update
+	--	Update configuration of one or more containers
+	
+$ docker container wait
+	--	Block until one or more containers stop, then print their exit codes
+	
+$ docker container exec
+	--	Execute a command in a running container
+	
+$ docker container ls
+	--	List containers
+	
+$ docker container run
+	--	Create and run a new container from an image
+	
+
+
+
+
+
+
+
+todo
+
+- know about multistage docker file
+- 2 docker file , one using cmd and one with entrypoint to understand both
+- where docker store the image and files build using docker built.
+- kill vs stop difference in docker conainer
+- learn about different networks in docker
+- create a google doc of all the commands used.
+- volumes in docker, also see where it gets stored in system
+- write two docker compose file to run
+	- pgadmin, postgres, redis, mongodb.
+	- mongodb, mongo gui, postgres, redis
+- go through docker inspect
+
+
+

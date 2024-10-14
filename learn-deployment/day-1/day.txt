@@ -1,0 +1,11 @@
+
+
+task
+
+	- create a basic express server with a single endpoint (health check route)
+	- host it on heroku
+	- create a proper git repo of this backend.
+	- use node 20+ LTS version
+	- 
+
+	and learn about aws services like ec3, s3 etc.
