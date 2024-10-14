@@ -1,0 +1,33 @@
+-- discussion about topics of prev class
+
+code optimization
+
+
+
+1.  optimization
+	-api optimization
+2. LLD
+	1. code
+		- code optimization
+			- parallelism
+			- promises
+			- complexity - (it depend on the cost and logical requirement)
+		- when to use await and when not to use
+		- sometimes u have to write the algo in another languguage (compiler lang) to optimize..
+
+	2. database 
+		- Query - subqueries, databse queries should be optimized, select only the required data and no unnecessery fields, 		indexing, views (materialized) etc.
+		- databases structure (most important)
+2. HLD
+	1. Redis
+		- caching, data types, and more
+	2. Using tools like elastic search, queue, snowflake and more
+	3. 
+
+
+
+
+
+self todo
+	- how to use parallelism in nodejs (theory only)
+	- 
