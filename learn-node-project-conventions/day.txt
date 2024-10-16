@@ -1,0 +1,124 @@
+good practice.
+- write the package name and version in package.json instead of direct downloading it using npm install command.
+
+
+prereq to do when creating node project
+
+- node LTS version
+- npm LTS version
+- create package.json using npm init
+- express
+- git init
+- add gitignore (env, node_modules, ds store, package-lock and other files to ignore)
+- .env file 
+- .env.sample file for example to push on git
+- linter and formatter -> eslint and prettier
+	- .prettierrc file for formatting config
+	- .eslint.config.js file for eslint configuration
+- add readme file
+- then initial commit now 
+- now create all the necessary folders with sample file then commit folder structure
+	(inside src)- routes -> controllers -> services -> helpers -> middlewares -> config -> models  -> validators -> 		utils -> serializers, swagger (options)
+	(outside src) -> tests
+- to push empty folder create a .gitkeep file in all folders then you can commit
+
+
+# folder structure
+- routes folder
+	- index.js files in routes to export all the routes to the server file.
+	- file name -> resources.route.js -> (resource name should be plural)
+	- route file should only import validators, controllers and handlers only.
+- controllers folder
+	- file name -> resources.controlelr.js
+- services folder
+	- file name -> resources.service.js
+- helpers folder
+	- file name -> resources.helper.js
+	- it can also contains a common.helper.js for functions that are common
+
+similer file naming for other folders
+
+- config
+	- redis.js, database.js (this is not standart and may vary)
+- middlewares
+	- ex - auth.middleware.js
+
+- utils folder
+	- service.util.js (here service can be anything )
+	- to attach third party services
+
+- models
+	- schema should be in snake case
+	- model name should be in pascal case (singular)
+	- in sequalize u have to overwrite the naming (remember to do that )
+	- ex -> user.js
+
+- migrations folder (orm specific)
+	- migration file name should be descriptive
+	- migrations file name contains a timestamp ....
+
+- seeders folder (orm specific)
+	- to insert static data in the table
+	ex - country state city names, super user etc
+
+- serilizers
+	- as api response should be camelcase so we can serializer to hanlde the response.
+	- it is used in service and the service should return the serialized data.
+
+
+# function naming  
+
+- function naming
+	- function name should show what its doing such as create, update or delete
+	- camel case
+- file name
+	- should follow kebeb-case
+
+
+
+
+
+
+
+
+
+common pacakges 
+- nodemon
+- prettier
+- eslint
+- ORM - sequalize or mongoose
+- 
+
+
+
+
+git branch conventions
+------------
+feature
+fix
+docs
+chore
+
+---------
+hotifx
+release
+------------
+
+
+todo
+- Joi and Yup for validations
+- 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
