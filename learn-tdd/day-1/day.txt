@@ -1,0 +1,21 @@
+Today-(Technical design document & Test driven document)
+
+- what is technical design document
+- how to write doc
+- What is test driven development
+- How to write tests
+
+
+
+
+TODO: 
+	- create a technical design document for basic calculator
+		- use (BODMAS) for operations 
+		- take only two numbers
+		- also maintain history of the calculator.
+		- make single table and its upto u to handle history.
+		- u can also make it user wise means each user will have a different calculator history.
+
+	- Learn about mocking and stubbing
+	- write code for the calculator TDD using test driven development.
+	- Learn about how to find if password is weak or not
